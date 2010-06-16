@@ -14,5 +14,7 @@ Feature: MySQL import
     And the record has value "created_at" = "2010-06-15 10:55:43"
     When I import "foo" to dataset "foo"
     Then I should have a record for dataset "foo" with table "bar" and id "1" 
-    And the record has values "{'id': 1, 'name': 'Chuck', 'created_at': '2010-06-16 10:55:43'}"
+    And the record should have key "id" with value "1"
+    And the record should have key "name" with value "Chuck"
+    And the record should have key "created_at" with value "2010-06-15 10:55:43"
   

@@ -41,13 +41,18 @@ CreateDatasets.migrate(:up) unless migrations.include?("create_datasets")
 
 class CreateRecords < ActiveRecord::Migration
   def self.up
-    create_table :records do |t|
+    create_table :records, :id => false do |t|
       t.string :table
       t.integer :dataset_id
       t.text :data
+      t.integer :id
       t.timestamps
-      execute "INSERT INTO schema_migrations (migration) VALUES ('create_records')"
     end
+    
+    add_index :records, :id
+    add_index :records, :table
+    add_index :records, :dataset_id
+    execute "INSERT INTO schema_migrations (migration) VALUES ('create_records')"
   end
   
   def self.down

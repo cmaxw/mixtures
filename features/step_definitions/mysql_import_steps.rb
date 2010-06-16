@@ -38,8 +38,8 @@ Then /^I should have a record for dataset "([^\"]*)" with table "([^\"]*)" and i
   @record = @dataset.records.find_by_table_and_id(table, id)
 end
 
-Then /^the record has values "([^\"]*)"$/ do |values|
-  values.split(",").each do |value|
-    @record.data.should contain(value)
-  end
+Then /^the record should have key "([^"]*)" with value "([^"]*)"$/ do |key, value|
+  data = JSON.parse(@record.data)
+  data.should have_key(key)
+  data[key].should == value
 end

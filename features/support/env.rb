@@ -4,6 +4,7 @@ Bundler.setup
 
 require File.dirname(__FILE__) + '/../../lib/mixtures'
 require 'cucumber'
+require 'spec'
 
 ActiveRecord::Base.establish_connection(
   :adapter  => "mysql",
@@ -14,6 +15,7 @@ ActiveRecord::Base.establish_connection(
 )
 
 require File.dirname(__FILE__) + '/../../lib/mixtures/migrations'
+Dir[File.dirname(__FILE__) + '/matchers/*.rb'].each {|file| require file }
 
 # How to clean your database when transactions are turned off. See
 # http://github.com/bmabey/database_cleaner for more info.
