@@ -1,0 +1,39 @@
+--- 
+dependencies: 
+  activerecord: 
+    group: 
+    - :default
+    version: ">= 0"
+  mysql: 
+    group: 
+    - :default
+    version: ">= 0"
+  cucumber: 
+    group: 
+    - :default
+    version: = 0.8.1
+specs: 
+- activesupport: 
+    version: 2.3.5
+- activerecord: 
+    version: 2.3.5
+- builder: 
+    version: 2.1.2
+- diff-lcs: 
+    version: 1.1.2
+- trollop: 
+    version: 1.16.2
+- gherkin: 
+    version: 2.0.1
+- json_pure: 
+    version: 1.4.3
+- term-ansicolor: 
+    version: 1.0.5
+- cucumber: 
+    version: 0.8.1
+- mysql: 
+    version: 2.8.1
+hash: c25b849073e43386e5f35f6abd14b53023469428
+sources: 
+- Rubygems: 
+    uri: http://gemcutter.org
